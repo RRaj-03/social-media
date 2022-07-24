@@ -2,7 +2,7 @@ import React from 'react'
 import Post from './Post'
 import { useContext } from 'react'
 import PostContext from '../context/Posts/PostContext'
-const Dasboard = () => {
+const Dasboard = (props) => {
     const postContext = useContext(PostContext)
     const {Posts,EditPost,deletePost,SubmitPost}=postContext
     return (
@@ -43,7 +43,7 @@ const Dasboard = () => {
                 </div>
             </div>
             {Posts.map((element,index) => {
-                return (<div key={`a${index}`}><Post element={element} index={index} deletePost={deletePost} EditPost={EditPost}/></div>)  
+                return (<div key={`a${index}`}><Post showAlert={props.showAlert} element={element} index={index} deletePost={deletePost} EditPost={EditPost}/></div>)  
             })}
         </div>
 

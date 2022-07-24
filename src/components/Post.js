@@ -34,12 +34,14 @@ const Post = (props) => {
                         <div className='w-fit items-center justify-center hidden sm:flex'>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base m-1 h-fit" onClick={() => {
                                 props.deletePost(props.index)
+                                props.showAlert("Your Post has been deleted","Deleted")
                             }}>Delete
                                 <svg xmlns="http://www.w3.org/2000/svg" height={"16px"} className="fill-white ml-2" viewBox="0 0 448 512"><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" /></svg>
                             </button>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base m-1 h-fit" onClick={() => {
                                 if (editable) {
                                     props.EditPost(props.index, titlePost, contentPost, likes, dislikes, date, true)
+                                    props.showAlert("Your Post has been Edited","success")
                                 }
                                 ToggleEdit()
                             }} >{editable ? "Share" : "Edit"}
@@ -99,12 +101,14 @@ const Post = (props) => {
                         <div className='small:w-fit items-center justify-between flex sm:hidden'>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base m-1 h-fit" onClick={() => {
                                 props.deletePost(props.index)
+                                props.showAlert("Your Post has been deleted","Deleted")
                             }}><span className='hidden'>Delete</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height={"23px"} className="fill-white" viewBox="0 0 448 512"><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" /></svg>
                             </button>
                             <button className="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base m-1 h-fit" onClick={() => {
                                 if (editable) {
                                     props.EditPost(props.index, titlePost, contentPost, likes, dislikes, date, true)
+                                    props.showAlert("Your Post has been Edited","success")
                                 }
                                 ToggleEdit()
                             }} >{editable ? "Share" : "Edit"}

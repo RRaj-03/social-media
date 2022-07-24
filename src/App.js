@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import SignUp from './components/SignUp';
@@ -26,7 +25,7 @@ function App() {
     <BrowserRouter>
     <Navbar alert={alert} />
     <Routes>
-        <Route exact path="/" element={<Dasboard/>} />
+        <Route exact path="/" element={<Dasboard showAlert={showAlert}/>} />
         <Route exact path='signup' element={<SignUp showAlert={showAlert}  />} />
         <Route exact path='login' element={<LogIn showAlert={showAlert} />} />
     </Routes>
