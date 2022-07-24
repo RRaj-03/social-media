@@ -34,7 +34,11 @@ const Dasboard = (props) => {
                             className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         />
                     </div>
-                    <button className="inline-flex col-span-2 lg:col-span-1 justify-self-start items-center self-end mb-1 bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 h-fit"  onClick={SubmitPost}>Post
+                    <button className="inline-flex col-span-2 lg:col-span-1 justify-self-start items-center self-end mb-1 bg-indigo-500 border-0 py-1 px-3 focus:outline-none text-white hover:bg-indigo-600 rounded text-base mt-4 md:mt-0 h-fit"  onClick={()=>{
+                        SubmitPost()
+                        props.showAlert("Your post is added","success")
+                        
+                        }}>Post
                         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
